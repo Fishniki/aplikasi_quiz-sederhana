@@ -18,11 +18,9 @@ class HomeScreen extends StatelessWidget {
           ),
           Image.asset(
             "assets/img/home.png",
-            width: 150,
+            width: 200,
           ),
-          const SizedBox(
-            height: 30,
-          ),
+        
           ElevatedButton.icon(
             style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.deepPurpleAccent,

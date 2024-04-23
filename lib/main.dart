@@ -1,4 +1,5 @@
 import 'package:aplikasi_quiz/homescreen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -13,19 +14,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Container(
-        
-        decoration: const BoxDecoration(
-            gradient:
-                LinearGradient(colors: [Colors.purpleAccent, Colors.pink],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight
-                ),
-              ),
-        child: const Scaffold(
-          backgroundColor: Colors.purpleAccent,
-          body: HomeScreen(),
-        ),
+      home: Scaffold(
+        backgroundColor: Colors.purpleAccent,
+        body: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Colors.purpleAccent, Colors.pink],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight),
+            ),
+            child: const HomeScreen()),
       ),
     );
   }
