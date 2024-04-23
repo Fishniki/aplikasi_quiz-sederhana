@@ -23,22 +23,21 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.deepPurpleAccent,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0))),
-              onPressed: () {},
-              child: const Row(
-                children: [
-                  Icon(Icons.arrow_right),
-                  Text(
-                    "Mulai Quiz",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.pink),
-                  )
-                ],
-              ))
+          ElevatedButton.icon(
+            style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.deepPurpleAccent,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0))),
+            onPressed: () {},
+            icon: const Icon(
+              Icons.arrow_right_alt,
+              color: Colors.pinkAccent,
+            ),
+            label: const Text(
+              "Mulai Quiz",
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.pink),
+            ),
+          )
         ],
       ),
     );

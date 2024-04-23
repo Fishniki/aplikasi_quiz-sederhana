@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Container(
+        
         decoration: const BoxDecoration(
             gradient:
                 LinearGradient(colors: [Colors.purpleAccent, Colors.pink],
