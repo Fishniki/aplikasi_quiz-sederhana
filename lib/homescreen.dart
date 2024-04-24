@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen(this.startQuiz,{super.key});
+
+  final void Function() startQuiz;
+
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +14,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           const Text(
             "Jawab Pertanyaanku Ya!!",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
           ),
           const SizedBox(
             height: 20,
@@ -25,8 +28,10 @@ class HomeScreen extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.deepPurpleAccent,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0))),
-            onPressed: () {},
+                    borderRadius: BorderRadius.circular(0)
+                  )
+              ),
+            onPressed: startQuiz,
             icon: const Icon(
               Icons.arrow_right_alt,
               color: Colors.pinkAccent,
