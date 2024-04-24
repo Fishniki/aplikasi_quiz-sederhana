@@ -1,5 +1,6 @@
 
 
+import 'package:aplikasi_quiz/cutomwigdet/text-style.dart';
 import 'package:flutter/material.dart';
 
 class QuestionsScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("Aku Niki"),
+      child: CustomText("Aku Niki")
     );
   }
 }

@@ -1,7 +1,8 @@
+import 'package:aplikasi_quiz/cutomwigdet/text-style.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen(this.startQuiz,{super.key});
+  const HomeScreen(this.startQuiz, {super.key});
 
   final void Function() startQuiz;
 
@@ -12,10 +13,7 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text(
-            "Jawab Pertanyaanku Ya!!",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
-          ),
+          const CustomText("Jawab Pertanyanku Ya!!"),
           const SizedBox(
             height: 20,
           ),

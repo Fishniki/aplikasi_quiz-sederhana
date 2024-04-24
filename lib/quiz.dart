@@ -10,21 +10,29 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget? activeScreen;
-
-  @override
-  void initState() {
-    activeScreen = HomeScreen(() {
-      swapScreen();
-    });
-    super.initState();
-  }
+  var activeScreen = "start-screen";
 
   void swapScreen() {
     setState(() {
-      activeScreen = const QuestionsScreen();
+      activeScreen = "question-screen";
     });
   }
+
+  // Widget? activeScreen; cara ke-1
+  //cara ke-1
+  // @override
+  // void initState() {
+  //   activeScreen = HomeScreen(() {
+  //     swapScreen();
+  //   });
+  //   super.initState();
+  // }
+
+  // void swapScreen() {
+  //   setState(() {
+  //     activeScreen = const QuestionsScreen();
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +47,10 @@ class _QuizState extends State<Quiz> {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight),
               ),
-              child: activeScreen),
-        ));
+              child: activeScreen == "start-screen"
+                  ? HomeScreen(swapScreen)
+                  : const QuestionsScreen()),
+        )
+      );
   }
 }
