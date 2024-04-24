@@ -36,6 +36,12 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
+    //cara 3
+    Widget screenWigdet = HomeScreen(swapScreen);
+    if (activeScreen == "question-screen") {
+      screenWigdet = const QuestionsScreen();
+    }
+
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -47,9 +53,8 @@ class _QuizState extends State<Quiz> {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight),
               ),
-              child: activeScreen == "start-screen"
-                  ? HomeScreen(swapScreen)
-                  : const QuestionsScreen()),
+              child: screenWigdet
+            ),
         )
       );
   }

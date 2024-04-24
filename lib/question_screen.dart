@@ -1,6 +1,6 @@
 
 
-import 'package:aplikasi_quiz/cutomwigdet/text-style.dart';
+import 'package:aplikasi_quiz/models/text-style.dart';
 import 'package:flutter/material.dart';
 
 class QuestionsScreen extends StatefulWidget {
