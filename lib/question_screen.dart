@@ -14,11 +14,25 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
+  var currentQuestionsIndex = 0;
 
+  void answerQuestion() {
+    // currentQuestionsIndex = currentQuestionsIndex + 1;
+    // currentQuestionsIndex += 1;
+    setState(() {
+      currentQuestionsIndex++;
+    });
+  }
+
+  void previousQuestion() {
+    setState(() {
+      currentQuestionsIndex--;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-  final curentSoal = questions[0];
+  final curentSoal = questions[currentQuestionsIndex];
 
 
     return SizedBox(
@@ -37,9 +51,17 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   //mengconvert tipe data menjadi sebuah string
                   //
                   ...curentSoal.getShuffLedAnswer().map((text){
-                    return ButtonCustom(text: text, onTape: (){});
+                    return ButtonCustom(text: text, onTape: answerQuestion);
                   }),
-                  
+                  const SizedBox(height: 50,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton(onPressed: previousQuestion, child: const Icon(Icons.arrow_left)),
+                      ElevatedButton(onPressed: answerQuestion, child: const Icon(Icons.arrow_right))
+
+                    ],
+                  )
                 ],
               ),
           ),
