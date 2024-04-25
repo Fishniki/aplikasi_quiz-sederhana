@@ -1,4 +1,6 @@
 
+import 'dart:core';
+
 import 'package:aplikasi_quiz/data/questions.dart';
 import 'package:aplikasi_quiz/models/button-custom.dart';
 import 'package:aplikasi_quiz/models/text-style.dart';
@@ -22,21 +24,25 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     return SizedBox(
       width: double.infinity,
       child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomText(curentSoal.soal),
-                const SizedBox(height: 30,),
-                
-                ButtonCustom(text: curentSoal.opsi[0], onTape: () { }),
-                  const SizedBox(height: 10,),
-                ButtonCustom(text: curentSoal.opsi[1], onTape: () { }),
-                  const SizedBox(height: 10,),
-                ButtonCustom(text: curentSoal.opsi[2], onTape: () { }),
-                  const SizedBox(height: 10,),
-                ButtonCustom(text: curentSoal.opsi[3], onTape: () { }),
-              ],
-            ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  CustomText(curentSoal.soal),
+       
+                  const SizedBox(height: 30,),
+            
+                  //mengconvert tipe data menjadi sebuah string
+                  //
+                  ...curentSoal.getShuffLedAnswer().map((text){
+                    return ButtonCustom(text: text, onTape: (){});
+                  }),
+                  
+                ],
+              ),
+          ),
         ),
     );
   }

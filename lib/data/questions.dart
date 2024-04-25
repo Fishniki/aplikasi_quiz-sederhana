@@ -1,6 +1,6 @@
 import 'package:aplikasi_quiz/models/question-custom.dart';
 
-var questions = [
+final questions = [
   QuizQuestion(
     "Bak, bak apa yang isinya udang?",
     [

@@ -12,9 +12,7 @@ class ButtonCustom extends StatelessWidget {
     return ElevatedButton(
       onPressed: onTape,
       style: ElevatedButton.styleFrom(
-          fixedSize: const Size(200, 0),
-          maximumSize: const Size(200, 50),
-          foregroundColor: Colors.deepPurpleAccent,
+          foregroundColor: Colors.purpleAccent,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
       child: Text(text),
