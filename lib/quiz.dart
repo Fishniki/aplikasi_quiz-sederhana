@@ -1,3 +1,4 @@
+import 'package:aplikasi_quiz/data/questions.dart';
 import 'package:aplikasi_quiz/homescreen.dart';
 import 'package:aplikasi_quiz/question_screen.dart';
 import 'package:flutter/material.dart';
@@ -10,13 +11,24 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  final List<String> selectAnswer = [];
+  List<String> selectedAnswer = [];
   var activeScreen = "start-screen";
 
   void swapScreen() {
     setState(() {
       activeScreen = "question-screen";
     });
+  }
+
+  void chooseAnswer(String answer) {
+    selectedAnswer.add(answer);
+
+    if (selectedAnswer.length == questions.length) {
+      setState(() {
+        selectedAnswer = [];
+        activeScreen = "start-screen";
+      });
+    }
   }
 
   // Widget? activeScreen; cara ke-1
@@ -40,7 +52,7 @@ class _QuizState extends State<Quiz> {
     //cara 3
     Widget screenWigdet = HomeScreen(swapScreen);
     if (activeScreen == "question-screen") {
-      screenWigdet = const QuestionsScreen();
+      screenWigdet = QuestionsScreen(oneSelectAnswer: chooseAnswer,);
     }
 
     return MaterialApp(

@@ -7,7 +7,9 @@ import 'package:aplikasi_quiz/models/text-style.dart';
 import 'package:flutter/material.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key, required this.oneSelectAnswer});
+
+  final void Function(String answer) oneSelectAnswer;
 
   @override
   State<QuestionsScreen> createState() => _QuestionsScreenState();
@@ -16,9 +18,11 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionsIndex = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String selectedAnswer) {
     // currentQuestionsIndex = currentQuestionsIndex + 1;
     // currentQuestionsIndex += 1;
+    widget.oneSelectAnswer(selectedAnswer);
+
     setState(() {
       currentQuestionsIndex++;
     });
@@ -28,10 +32,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     setState(() {
       currentQuestionsIndex--;
       if(currentQuestionsIndex < 0){
-        print("KUNTUL");
+        // print("KUNTUL");
       }
     });
   }
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +46,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
     return SizedBox(
       width: double.infinity,
-      child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Column(
@@ -54,21 +59,21 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   //mengconvert tipe data menjadi sebuah string
                   //
                   ...curentSoal.getShuffLedAnswer().map((text){
-                    return ButtonCustom(text: text, onTape: answerQuestion);
+                    return ButtonCustom(text: text, onTape: (){answerQuestion(text);});
                   }),
-                  const SizedBox(height: 50,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ElevatedButton(onPressed: previousQuestion, child: const Icon(Icons.arrow_left)),
-                      ElevatedButton(onPressed: answerQuestion, child: const Icon(Icons.arrow_right))
 
-                    ],
-                  )
+                  // const SizedBox(height: 50,),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     ElevatedButton(onPressed: previousQuestion, child: const Icon(Icons.arrow_left)),
+                  //     // ElevatedButton(onPressed: (){answerQuestion(answer)}, child: const Icon(Icons.arrow_right))
+
+                  //   ],
+                  // )
                 ],
               ),
           ),
-        ),
     );
   }
 }

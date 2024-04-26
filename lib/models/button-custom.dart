@@ -16,7 +16,10 @@ class ButtonCustom extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           foregroundColor: Colors.purpleAccent,
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5)
+              )
+          ),
       child: Text(text),
     );
   }
