@@ -27,6 +27,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   void previousQuestion() {
     setState(() {
       currentQuestionsIndex--;
+      if(currentQuestionsIndex < 0){
+        print("KUNTUL");
+      }
     });
   }
 
