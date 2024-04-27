@@ -1,6 +1,6 @@
 import 'package:aplikasi_quiz/models/question-custom.dart';
 
-final questions = [
+var questions = [
   QuizQuestion(
     "Bak, bak apa yang isinya udang?",
     [
@@ -14,9 +14,9 @@ final questions = [
   QuizQuestion(
     "Tikus-tikus apa yang kaya?",
     [
+      "Tikus Kantor",
       "Tikus Belanda",
       "Tikus Pengangguran",
-      "Tikus Kantor",
       "TIkus Ternak",
     ]
   ),
@@ -24,9 +24,9 @@ final questions = [
   QuizQuestion(
     "Siapa musuh ambatron?",
     [
+      "Rusdi Barbershop",
       "Prof. Jony",
       "Mister Ironi",
-      "Rusdi Barbershop",
       "Bundah Rama",
     ]
   ),
@@ -34,10 +34,10 @@ final questions = [
   QuizQuestion(
     "Apa tujuan rusdi setelah mangalahkan amabatron",
     [
+      "Crt",
       "Mendirikan Barbershop",
       "Berteman",
       "Menguasai Dunia",
-      "Crt",
     ]
   ),
 
@@ -48,8 +48,18 @@ final questions = [
       "Jendral Ambato",
       "Doctor Jony",
       "Rusdi",
-    ]
+    ],
   ),
+
+  QuizQuestion(
+    "Siapa nama dokter yang memiliki banyak profesi?",
+    [
+      "Jony Since",
+      "Prof. Ironi",
+      "Jendral Ambato",
+      "Rusdi",
+    ]
+  )
 ];
 
 
