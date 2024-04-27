@@ -18,7 +18,8 @@ class ButtonCustom extends StatelessWidget {
           shape:
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5)
-              )
+              ),
+              
           ),
       child: Text(text),
     );

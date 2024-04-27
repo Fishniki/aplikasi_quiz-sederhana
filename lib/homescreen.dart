@@ -14,9 +14,7 @@ class HomeScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           const CustomText("Jawab Pertanyanku Ya!!"),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20,),
           Image.asset(
             "assets/img/home.png",
             width: 200,
