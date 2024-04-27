@@ -8,6 +8,7 @@ class ResultScreen extends StatelessWidget {
 
   final List<String> chooseAnswer;
   List<Map<String, Object>> getSummarryData(){
+    
     final List<Map<String, Object>> summary = [];
 
     for ( var i = 0; i < chooseAnswer.length; i++ ){

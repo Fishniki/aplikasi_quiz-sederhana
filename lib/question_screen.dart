@@ -28,15 +28,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     });
   }
 
-  void previousQuestion() {
-    setState(() {
-      currentQuestionsIndex--;
-      if(currentQuestionsIndex < 0){
-        // print("KUNTUL");
-      }
-    });
-  }
-
+  
   
 
   @override
@@ -61,16 +53,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   ...curentSoal.getShuffLedAnswer().map((text){
                     return ButtonCustom(text: text, onTape: (){answerQuestion(text);});
                   }),
-
-                  // const SizedBox(height: 50,),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //   children: [
-                  //     ElevatedButton(onPressed: previousQuestion, child: const Icon(Icons.arrow_left)),
-                  //     // ElevatedButton(onPressed: (){answerQuestion(answer)}, child: const Icon(Icons.arrow_right))
-
-                  //   ],
-                  // )
                 ],
               ),
           ),
